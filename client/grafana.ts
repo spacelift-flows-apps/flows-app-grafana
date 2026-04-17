@@ -273,7 +273,6 @@ function extractErrorMessage(body: unknown, fallback: string): string {
 const cacheOptions = {
   maxAge: 60_000,
   promise: true as const,
-  normalizer: (args: unknown[]) => `${args[0]}|${args[1]}`,
 };
 
 export const getDatasourcesCached = memoizee(
