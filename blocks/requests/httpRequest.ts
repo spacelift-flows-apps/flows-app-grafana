@@ -61,14 +61,14 @@ export const httpRequestBlock: AppBlock = {
           name: "Body",
           description:
             "Optional JSON body. Ignored for GET/DELETE unless the endpoint accepts one.",
-          type: "any",
+          type: { type: "object", additionalProperties: true },
           required: false,
         },
         query: {
           name: "Query Parameters",
           description:
             "Optional object of query string parameters, merged with any included directly in the path.",
-          type: "any",
+          type: { type: "object", additionalProperties: true },
           required: false,
         },
       },

@@ -54,7 +54,7 @@ export const queryDatasourceBlock: AppBlock = {
           name: "Query Payload",
           description:
             'The datasource-specific query fields, merged into the query object. Example for Prometheus: {"expr": "up", "range": true}. Example for Loki: {"expr": "{job=\\"varlogs\\"}"}. The datasource, intervalMs and maxDataPoints are set from the other fields.',
-          type: "any",
+          type: { type: "object", additionalProperties: true },
           required: true,
           default: {},
         },

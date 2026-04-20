@@ -210,14 +210,14 @@ export const alertRuleBlock: AppBlock = {
       name: "Labels",
       description:
         'Object of label key/value pairs attached to the rule and used by notification policies (e.g. {"severity":"critical","team":"platform"}).',
-      type: "any",
+      type: { type: "object", additionalProperties: true },
       required: false,
     },
     annotations: {
       name: "Annotations",
       description:
         "Object of annotation key/value pairs for rendering the alert. Common keys: summary, description, runbook_url.",
-      type: "any",
+      type: { type: "object", additionalProperties: true },
       required: false,
     },
     contactPoint: {
